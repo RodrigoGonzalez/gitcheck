@@ -77,7 +77,7 @@ def searchRepositories():
     for curdir in dirs:
         if curdir[-1:] == '/':
             curdir = curdir[:-1]
-        showDebug("  Scan git repositories from %s" % curdir)
+        showDebug(f"  Scan git repositories from {curdir}")
 
         html.path = curdir
         startinglevel = curdir.count(os.sep)
@@ -86,7 +86,7 @@ def searchRepositories():
             level = directory.count(os.sep) - startinglevel
             if argopts.get('depth', None) is None or level <= argopts.get('depth', None):
                 if '.git' in dirnames:
-                    showDebug("  Add %s repository" % directory)
+                    showDebug(f"  Add {directory} repository")
                     repo.add(directory)
 
     showDebug('Done')

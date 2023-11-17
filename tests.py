@@ -58,9 +58,9 @@ class TestPackages(unittest.TestCase):
         os.chdir(GITROOT)
         repos = gitcheck.searchRepositories()
 
-        self.assertEqual(repos[0], '%s/fabrecipes' % GITROOT)
-        self.assertEqual(repos[1], '%s/gitcheck' % GITROOT)
-        self.assertEqual(repos[2], '%s/serialkiller' % GITROOT)
+        self.assertEqual(repos[0], f'{GITROOT}/fabrecipes')
+        self.assertEqual(repos[1], f'{GITROOT}/gitcheck')
+        self.assertEqual(repos[2], f'{GITROOT}/serialkiller')
 
     def test_gitcheck(self):
         os.chdir(GITROOT)
